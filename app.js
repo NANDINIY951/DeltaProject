@@ -41,7 +41,7 @@ main()
 })
 //mongo store
 const store = mongoStore.create({
-    mongoUrl:ATLAS_DB,
+    mongoUrl:Atlas_URL,
     crypto:{
         secret:process.env.SECRET
     },
