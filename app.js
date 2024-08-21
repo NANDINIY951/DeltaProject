@@ -82,6 +82,10 @@ app.use((req,res,next)=>{
 })
 
 
+app.get("/",async (req,res)=>{
+    const listingData = await listing.find({})
+    res.render("listings/allListings.ejs",{listingData})
+})
 
 // user signup route
 app.use("/",userRoute)
