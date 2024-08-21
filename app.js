@@ -48,7 +48,7 @@ const store = mongoStore.create({
     touchAfter:24*3600 // updates stored after 24hrs, if no changes
 })
 // store error
-store.on((err)=>{
+store.on("error",(err)=>{
     console.log("ERROR IN MONGO SESSION STORE",err)
 })
 
@@ -102,6 +102,6 @@ app.use((err,req,res,next)=>{
     res.status(statusCode).render("listings/error.ejs",{message})
 })
 
-app.listen(8080,()=>{
+app.listen(8080,(req,res)=>{
     console.log("server started")
 });
